@@ -19,11 +19,11 @@ public class MergeSort {
 				//System.out.println(highIndex);
 				mergeSort(list, lowIndex, midIndex);         				//working with/breaking apart indexes: 0,1,2,3,4,5. This mergeSort() call occurs more than once, recursively sends lower/left half through mergeSort() again & again, every time with new midIndex ex.2,1,0 & new highIndex ex.5,2,1 & lowIndex ex. 0. Finding/separating the Left/lower sublists lowIndex & midIndex to get ready to be placed in the L[] array sublist later on. //Extra info: then call merge sort on bottom/left half of list, sending same list along with lowIndex & midIndex we just calculated. So this sends left half to mergeSort().
 				mergeSort(list, midIndex + 1, highIndex);     				//working with/breaking apart indexes: 6,7,8,9,10. This mergeSort() call occurs more than once, recursively sends higher/right half through mergeSort() again & again, every time with new midIndex ex.8,9 & lowIndex ex. 6,9 (note: remember that lowIndex is calculated "lowIndex+1", so 5+1='6',8+1='9') & highIndex 10.  Finding/separating the higher/right sublists midIndex & highIndex to get ready to be placed in the R[] array sublist later on.  //Extra info: then call M.S. on top/right half, sending medIndex+1 using this at the lowIndex. highIndex as the upper index. So this sends right half to mergeSort().
-				mergeTogetherEachElementIntoSublistsThanMergeSublistBackToParentList_Merge(list, lowIndex, midIndex, highIndex);    //…after those 2 lists(left & right) are sorted/"all elements are separated", we do the merge step. This is considered
+				merge(list, lowIndex, midIndex, highIndex);    //mergeTogetherEachElementIntoSublistsThanMergeSublistBackToParentList_Merge()   …after those 2 lists(left & right) are sorted/"all elements are separated", we do the merge step. This is considered
 			} 																//…this calls separate merge() function below, which is the helper function that does the merge. So this will call merge() and merge the 2 sorted lists(left & right) together.
 	}
 	
-	public void mergeTogetherEachElementIntoSublistsThanMergeSublistBackToParentList_Merge(int[] list, int lowIndex, int midIndex, int highIndex) {
+	public void merge(int[] list, int lowIndex, int midIndex, int highIndex) {  //mergeTogetherEachElementIntoSublistsThanMergeSublistBackToParentList_Merge()
 																//list Partition/inserting elements into there respective sublists, L[] or R[], only 2 sublists: 
 		/* 2.**************Inputting lower half of unsorted list & putting them in L[] array sublist, and then sorting this L[] array sublist.********************************/
 																//Left: Getting all the unsorted lower/left indexes from lowIndex through midIndex and putting them into L[] array sublists.
