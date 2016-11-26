@@ -42,7 +42,6 @@ public class MergeSort {
 		}
 		R[highIndex - midIndex] = Integer.MAX_VALUE;			//Highest possible value an integer can have is 9999999999 , so any value inside the R[] array cannot be larger than 9999999999. //MAX_VALUE notes: That's a Java constant that is the highest possible value an integer can have. So anything you compare to it will always be less than MAX_VALUE. Think of it as 9999999999.﻿
 		/* 4.*********************Compare L[] & R[] sublist & Merge back into parent list in sorted order********************************/
-		//Merge-Logic: view minute 6:15 - 8:25 for flow explanation of the next 13 lined of code: https://www.youtube.com/watch?v=TzeBrDU-JaY
 		int i = 0; 											//i will mark the index of the smallest unpicked(Unpicked meaning:next index to be picked/next in line) in L ...left/lower part of list.
 		int j = 0; 											//j will mark the index of the smallest unpicked(Unpicked meaning:next index to be picked/next in line) in R ...Right/Higher part of list.
 		for (int k = lowIndex; k <= highIndex; k++) { 		//K will mark the index of the position that needs to be filled in list.
